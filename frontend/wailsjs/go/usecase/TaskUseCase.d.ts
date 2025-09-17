@@ -6,6 +6,6 @@ export function AddTask(arg1:string,arg2:string,arg3:string,arg4:string):Promise
 
 export function DeleteTask(arg1:string):Promise<void>;
 
-export function ListTasks(arg1:string,arg2:string):Promise<Array<dto.TaskDTO>>;
+export function ListTasks(arg1:string,arg2:string,arg3:string):Promise<Array<dto.TaskDTO>>;
 
 export function ToggleDone(arg1:string):Promise<void>;

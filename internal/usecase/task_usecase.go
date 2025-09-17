@@ -58,8 +58,9 @@ func (uc *TaskUseCase) ToggleDone(idStr string) error {
 	}
 	return uc.Service.ToggleDone(ctx, id)
 }
-func (u *TaskUseCase) ListTasks(status string, dateFilter string) ([]dto.TaskDTO, error) {
-	tasks, err := u.Service.ListTasksFiltered(context.Background(), status, dateFilter)
+
+func (uc *TaskUseCase) ListTasks(status, dateFilter, sortBy string) ([]dto.TaskDTO, error) {
+	tasks, err := uc.Service.ListTasksFiltered(context.Background(), status, dateFilter, sortBy)
 	if err != nil {
 		return nil, err
 	}

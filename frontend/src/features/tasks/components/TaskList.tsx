@@ -6,17 +6,19 @@ interface TaskListProps {
     tasks: dto.TaskDTO[];
     onToggle: (id: number) => void;
     onDelete: (id: number) => void;
-    onFilterChange: (status: string, dateFilter: string) => void;
+    onFilterChange: (status: string, dateFilter: string, sortBy: string) => void;
 }
 
 export default function TaskList({tasks, onToggle, onDelete, onFilterChange}: TaskListProps) {
     const [statusFilter, setStatusFilter] = useState("all");
     const [dateFilter, setDateFilter] = useState("all");
+    const [sortBy, setSortBy] = useState("created");
 
-    const handleFilterChange = (newStatus: string, newDate: string) => {
+    const handleFilterSortChange = (newStatus: string, newDate: string, newSort: string) => {
         setStatusFilter(newStatus);
         setDateFilter(newDate);
-        onFilterChange(newStatus, newDate);
+        setSortBy(newSort);
+        onFilterChange(newStatus, newDate, newSort);
     };
 
     return (
@@ -25,7 +27,7 @@ export default function TaskList({tasks, onToggle, onDelete, onFilterChange}: Ta
                 <select
                     className="border px-2 py-1 rounded"
                     value={statusFilter}
-                    onChange={(e) => handleFilterChange(e.target.value, dateFilter)}
+                    onChange={(e) => handleFilterSortChange(e.target.value, dateFilter, sortBy)}
                 >
                     <option value="all">All</option>
                     <option value="active">Active</option>
@@ -35,12 +37,22 @@ export default function TaskList({tasks, onToggle, onDelete, onFilterChange}: Ta
                 <select
                     className="border px-2 py-1 rounded"
                     value={dateFilter}
-                    onChange={(e) => handleFilterChange(statusFilter, e.target.value)}
+                    onChange={(e) => handleFilterSortChange(statusFilter, e.target.value, sortBy)}
                 >
                     <option value="all">All</option>
                     <option value="today">Today</option>
                     <option value="week">This Week</option>
                     <option value="overdue">Overdue</option>
+                </select>
+
+                <select
+                    className="border px-2 py-1 rounded"
+                    value={sortBy}
+                    onChange={(e) => handleFilterSortChange(statusFilter, dateFilter, e.target.value)}
+                >
+                    <option value="created">Created</option>
+                    <option value="due">Due Date</option>
+                    <option value="priority">Priority</option>
                 </select>
             </div>
 

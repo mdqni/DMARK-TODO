@@ -36,6 +36,6 @@ func (s *TaskService) GetTaskByID(ctx context.Context, id int) (domain.Task, err
 	return s.Repo.GetTaskByID(ctx, id)
 }
 
-func (s *TaskService) ListTasksFiltered(ctx context.Context, status string, dateFilter string) ([]domain.Task, error) {
-	return s.Repo.GetTasksFiltered(ctx, status, dateFilter)
+func (s *TaskService) ListTasksFiltered(ctx context.Context, status, dateFilter, sortBy string) ([]domain.Task, error) {
+	return s.Repo.GetTasksFiltered(ctx, status, dateFilter, sortBy)
 }

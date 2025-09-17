@@ -8,10 +8,15 @@ function App() {
     const [tasks, setTasks] = useState<dto.TaskDTO[]>([]);
     const [statusFilter, setStatusFilter] = useState("all");
     const [dateFilter, setDateFilter] = useState("all");
+    const [sortBy, setSortBy] = useState("created"); // добавили сортировку
 
-    const fetchTasks = async (status = statusFilter, date = dateFilter) => {
+    const fetchTasks = async (
+        status = statusFilter,
+        date = dateFilter,
+        sort = sortBy
+    ) => {
         try {
-            const result = await ListTasks(status, date);
+            const result = await ListTasks(status, date, sort);
             setTasks(result || []);
         } catch (err) {
             console.error("Failed to fetch tasks:", err);
@@ -19,15 +24,16 @@ function App() {
         }
     };
 
-    const handleFilterChange = (status: string, date: string) => {
+    const handleFilterChange = (status: string, date: string, sort: string) => {
         setStatusFilter(status);
         setDateFilter(date);
-        fetchTasks(status, date);
+        setSortBy(sort);
+        fetchTasks(status, date, sort);
     };
 
     useEffect(() => {
         fetchTasks();
-    }, []);
+    }, []); // только при монтировании
 
     const handleToggle = async (id: number) => {
         try {
@@ -51,8 +57,12 @@ function App() {
         <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10 px-4">
             <h1 className="text-3xl text-gray-900 font-bold mb-6">Task Manager</h1>
             <TaskForm onTaskAdded={fetchTasks}/>
-            <TaskList tasks={tasks} onToggle={handleToggle} onDelete={handleDelete}
-                      onFilterChange={handleFilterChange}/>
+            <TaskList
+                tasks={tasks}
+                onToggle={handleToggle}
+                onDelete={handleDelete}
+                onFilterChange={handleFilterChange}
+            />
         </div>
     );
 }

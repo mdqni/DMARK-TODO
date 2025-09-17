@@ -115,8 +115,7 @@ func (r *PostgresTaskRepo) GetTasks(ctx context.Context) ([]domain.Task, error) 
 
 	return tasks, nil
 }
-
-func (r *PostgresTaskRepo) GetTasksFiltered(ctx context.Context, status string, dateFilter string) ([]domain.Task, error) {
+func (r *PostgresTaskRepo) GetTasksFiltered(ctx context.Context, status, dateFilter, sortBy string) ([]domain.Task, error) {
 	query := "SELECT id, title, completed, priority, due_date, description, created_at, updated_at FROM tasks"
 	conditions := []string{}
 	args := []interface{}{}
@@ -140,7 +139,14 @@ func (r *PostgresTaskRepo) GetTasksFiltered(ctx context.Context, status string, 
 		query += " WHERE " + strings.Join(conditions, " AND ")
 	}
 
-	query += " ORDER BY created_at ASC"
+	switch sortBy {
+	case "due":
+		query += " ORDER BY due_date ASC NULLS LAST"
+	case "priority":
+		query += " ORDER BY CASE priority WHEN 'high' THEN 1 WHEN 'medium' THEN 2 ELSE 3 END ASC"
+	default:
+		query += " ORDER BY created_at ASC"
+	}
 
 	rows, err := r.DB.QueryContext(ctx, query, args...)
 	if err != nil {

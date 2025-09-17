@@ -10,8 +10,8 @@ export function DeleteTask(arg1) {
   return window['go']['usecase']['TaskUseCase']['DeleteTask'](arg1);
 }
 
-export function ListTasks(arg1, arg2) {
-  return window['go']['usecase']['TaskUseCase']['ListTasks'](arg1, arg2);
+export function ListTasks(arg1, arg2, arg3) {
+  return window['go']['usecase']['TaskUseCase']['ListTasks'](arg1, arg2, arg3);
 }
 
 export function ToggleDone(arg1) {

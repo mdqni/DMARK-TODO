@@ -13,5 +13,5 @@ type TaskRepo interface {
 	GetTaskByID(ctx context.Context, id int) (domain.Task, error)
 	GetTasks(ctx context.Context) ([]domain.Task, error)
 
-	GetTasksFiltered(ctx context.Context, status string, dateFilter string) ([]domain.Task, error)
+	GetTasksFiltered(ctx context.Context, status string, dateFilter string, sortedBy string) ([]domain.Task, error)
 }
