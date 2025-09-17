@@ -38,7 +38,8 @@ Go >= 1.20
 
 Node.js >= 20
 
-Wails CLI:
+
+*Запуск проекта
 
 ```bash
 git clone https://github.com/mdqni/DMARK-TODO.git
@@ -50,30 +51,3 @@ npm install prop-types
 docker compose up --build
 wails dev
 ```
-
-
-Запуск проекта:
-
-Клонировать репозиторий:
-
-git clone https://github.com/mdqni/DMARK-TODO.git
-cd DMARK-TODO
-
-
-Структура проекта
-
-DMARK-TODO/ 
-├── frontend/        # React фронтенд 
-│   ├── src/         # Исходники приложения 
-│   └── dist/        # Сборка фронтенда 
-├── internal/        # Go логика 
-│   ├── app/ 
-│   ├── service/ 
-│   ├── usecase/ 
-│   └── repository/ 
-├── main.go          # Точка входа Go приложения 
-├── migration/       # SQL миграции для PostgreSQL 
-├── Dockerfile 
-├── docker-compose.yml 
-└── README.md 
-
