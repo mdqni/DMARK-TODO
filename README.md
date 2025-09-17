@@ -1,4 +1,4 @@
-<img width="1020" height="762" alt="image" src="https://github.com/user-attachments/assets/eb950b9f-8c1c-4876-981d-c8cf7cbb1a42" />To-Do List Desktop App (Wails + Go + React)
+To-Do List Desktop App (Wails + Go + React)
 Описание
 
 Десктопное приложение для управления задачами (To-Do List).
@@ -34,14 +34,14 @@
 
 **Video Link: https://drive.google.com/file/d/1tTJe-2oaIlfo_qY94ptTZLUSbu50uPy8/view?usp=sharing
 
-
-<img width="1020" height="762" alt="image" src="https://github.com/user-attachments/assets/c770f859-8307-4810-8939-be79a81171ba" />
-<img width="1020" height="762" alt="image" src="https://github.com/user-attachments/assets/7ccbf50a-6a61-408f-8292-819b7969ebaa" />
-<img width="1020" height="762" alt="image" src="https://github.com/user-attachments/assets/99c7f9ea-0af1-42e5-8e39-91fa1272257f" />
-<img width="1020" height="762" alt="image" src="https://github.com/user-attachments/assets/ce2ee541-3a7c-4952-9b53-6c1fba1f6b50" />
-<img width="1020" height="762" alt="image" src="https://github.com/user-attachments/assets/33931789-1044-45d4-8c23-3c122b05ece6" />
-<img width="1020" height="762" alt="image" src="https://github.com/user-attachments/assets/75b24af0-a4d1-416f-b3eb-17135eb18e6c" />
-<img width="1020" height="762" alt="image" src="https://github.com/user-attachments/assets/745fc6ae-798d-42d6-a440-8e2421347166" />
+<img  alt="image" src="https://github.com/user-attachments/assets/eb950b9f-8c1c-4876-981d-c8cf7cbb1a42" />
+<img  alt="image" src="https://github.com/user-attachments/assets/c770f859-8307-4810-8939-be79a81171ba" />
+<img  alt="image" src="https://github.com/user-attachments/assets/7ccbf50a-6a61-408f-8292-819b7969ebaa" />
+<img  alt="image" src="https://github.com/user-attachments/assets/99c7f9ea-0af1-42e5-8e39-91fa1272257f" />
+<img  alt="image" src="https://github.com/user-attachments/assets/ce2ee541-3a7c-4952-9b53-6c1fba1f6b50" />
+<img  alt="image" src="https://github.com/user-attachments/assets/33931789-1044-45d4-8c23-3c122b05ece6" />
+<img  alt="image" src="https://github.com/user-attachments/assets/75b24af0-a4d1-416f-b3eb-17135eb18e6c" />
+<img  alt="image" src="https://github.com/user-attachments/assets/745fc6ae-798d-42d6-a440-8e2421347166" />
 
 
 
