@@ -2,7 +2,7 @@ services:
   app:
     build: .
     environment:
-      - CONN_STRING=postgres://postgres:1234@db:5432/tododb?sslmode=disable
+      - CONN_STRING=postgres://postgres:1234@db:5433/tododb?sslmode=disable
     depends_on:
       - db
   db:
@@ -12,4 +12,4 @@ services:
       POSTGRES_PASSWORD: 1234
       POSTGRES_DB: tododb
     ports:
-      - "5432:5432"
+      - "5433:5432"

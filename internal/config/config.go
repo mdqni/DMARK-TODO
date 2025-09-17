@@ -8,7 +8,7 @@ import (
 
 type Config struct {
 	Env        string `env:"ENV" env-default:"local"`
-	ConnString string `env:"CONN_STRING" env-default:"postgres://postgres:1234@localhost:5432/tododb?sslmode=disable"`
+	ConnString string `env:"CONN_STRING" env-default:"postgres://postgres:1234@localhost:5433/tododb?sslmode=disable"`
 
 	App AppConfig
 }
