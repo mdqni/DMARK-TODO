@@ -10,6 +10,7 @@ function App() {
     const [dateFilter, setDateFilter] = useState("all");
     const [sortBy, setSortBy] = useState("created"); // добавили сортировку
 
+
     const fetchTasks = async (
         status = statusFilter,
         date = dateFilter,
@@ -21,6 +22,14 @@ function App() {
         } catch (err) {
             console.error("Failed to fetch tasks:", err);
             setTasks([]);
+        }
+    };
+    const handleDelete = async (id: number) => {
+        try {
+            await DeleteTask(id.toString());
+            await fetchTasks();
+        } catch (err) {
+            console.error("Delete failed:", err);
         }
     };
 
@@ -43,16 +52,6 @@ function App() {
             console.error("Toggle failed:", err);
         }
     };
-
-    const handleDelete = async (id: number) => {
-        try {
-            await DeleteTask(id.toString());
-            fetchTasks();
-        } catch (err) {
-            console.error("Delete failed:", err);
-        }
-    };
-
     return (
         <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10 px-4">
             <h1 className="text-3xl text-gray-900 font-bold mb-6">Task Manager</h1>

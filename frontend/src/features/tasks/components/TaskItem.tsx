@@ -15,6 +15,18 @@ interface TaskItemProps {
 }
 
 export default function TaskItem({task, onToggle, onDelete}: TaskItemProps) {
+
+    const handleDelete = async () => {
+        const confirmed = window.confirm(`Удалить задачу "${task.title}"?`);
+        if (!confirmed) return;
+
+        try {
+            await onDelete(task.id);
+        } catch (err) {
+            console.error("Ошибка при удалении задачи:", err);
+        }
+    };
+
     const leadingActions = () => (
         <LeadingActions>
             <SwipeAction onClick={() => onToggle(task.id)}>
@@ -31,7 +43,7 @@ export default function TaskItem({task, onToggle, onDelete}: TaskItemProps) {
 
     const trailingActions = () => (
         <TrailingActions>
-            <SwipeAction destructive={true} onClick={() => onDelete(task.id)}>
+            <SwipeAction destructive={false} onClick={() => handleDelete()}>
                 <div className="flex items-center justify-center h-full w-full bg-red-500 text-white font-bold">
                     Delete
                 </div>
