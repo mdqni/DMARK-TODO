@@ -15,3 +15,11 @@
 2. Установить Wails:
 ```bash
 go install github.com/wailsapp/wails/v2/cmd/wails@latest
+```
+```bash
+git clone https://github.com/mdqni/DMARK-TODO.git
+export GOSUMDB=sum.golang.org
+export PATH=$PATH:~/go/bin
+cd DMARK-TODO
+wails dev
+```
