@@ -61,12 +61,19 @@ cd DMARK-TODO
 
 
 Структура проекта
-DMARK-TODO/
-├── frontend/        # React фронтенд
-├── internal/        # Go логика (app, service, usecase, repository)
-├── main.go          # Точка входа Go приложения
-├── migration/       # SQL миграции для PostgreSQL
-├── Dockerfile
-├── docker-compose.yml
-└── README.md
+
+DMARK-TODO/ 
+├── frontend/        # React фронтенд 
+│   ├── src/         # Исходники приложения 
+│   └── dist/        # Сборка фронтенда 
+├── internal/        # Go логика 
+│   ├── app/ 
+│   ├── service/ 
+│   ├── usecase/ 
+│   └── repository/ 
+├── main.go          # Точка входа Go приложения 
+├── migration/       # SQL миграции для PostgreSQL 
+├── Dockerfile 
+├── docker-compose.yml 
+└── README.md 
 
